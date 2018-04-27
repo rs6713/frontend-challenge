@@ -1,0 +1,15 @@
+{
+  "name": "front-end-challenge",
+  "version": "1.0.0",
+  "description": "Soho Strategy Front End Technical Challenge",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "lodash": "^4.10.0",
+    "moment": "^2.12.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node server.js"
+  }
+}

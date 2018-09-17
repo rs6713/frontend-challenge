@@ -281,15 +281,17 @@ class App extends Component {
         </div>
         <div id='dates'>
           <div id='dates-loading-overlay' style={datesOverlay(this.state.loading, this.state.failed)}>
-            | {this.state.loading ? 'LOADING' : 'SERVER ERROR'}
+            {this.state.loading ? 'LOADING' : 'SERVER ERROR'}
           </div>
-          {this.state.dates.map((date, index) =>
-            <div class='date' onClick={this.toggleDate(index)} style={getDateStyle(date['reserved'], date['active'], index)}>
-              <span class='desktop'>{date['day']} </span>
-              <div class='date-loading-overlay' style={dateOverlay(date['loading'])}>Loading</div>
-              <span class='mobile'> {date['weekday'] + ' ' + date['day'] + ' ' + this.state.currentDate['month'] + ' ' + this.state.currentDate['year'] } </span>
-            </div>
-          )}
+          <div>
+            {this.state.dates.map((date, index) =>
+              <div class='date' onClick={this.toggleDate(index)} style={getDateStyle(date['reserved'], date['active'], index)}>
+                <span class='desktop'>{date['day']} </span>
+                <div class='date-loading-overlay' style={dateOverlay(date['loading'])}>Loading</div>
+                <span class='mobile'> {date['weekday'] + ' ' + date['day'] + ' ' + this.state.currentDate['month'] + ' ' + this.state.currentDate['year'] } </span>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     )

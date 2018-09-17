@@ -1,0 +1,118 @@
+body{
+  font-size:16px;
+  color:#222222;
+  width:100%;
+  height:100vh;
+  max-height:100vh;
+  max-width:100%;
+  padding:0;
+  margin:0;
+  font-family:Arial;
+}
+
+#root{
+  height:100%;
+}
+
+#main{
+  width:100%;
+  height:100%;
+  display:flex;
+  box-sizing:border-box;
+  padding: 5% 10%;
+  flex-direction:column;
+}
+
+  #header{
+    width:100%;
+    text-align:center;
+    position:relative;
+  }
+
+    #header #date_nav{
+      width:100%;
+    }
+    #header #date_nav div:first-child{
+      float:left;
+      cursor:pointer;
+    }
+    #header #date_nav div:last-child{
+      float:right;
+      cursor:pointer;
+    }
+  
+
+  #days{
+    display:none;
+    text-align:center;
+  }
+    
+
+  #dates{
+    width:100%;
+    flex: 1 0;
+    overflow-y:scroll;
+    position:relative;
+  }
+    #dates .date{
+      padding: 1em 0;
+      text-align: center;
+      width:100%;
+      position:relative;
+      cursor:pointer;
+    }
+
+    #dates #dates-loading-overlay{
+      width:100%;
+      height:100%;
+      position:absolute;
+      font-size:2em;
+      text-align:center;
+      z-index:2;
+    }
+
+    #dates .date span.desktop{
+      display:none;
+      left:1em;
+      position:absolute;
+      top:1em;
+      
+    }
+    #dates .date .date-loading-overlay{
+      width:100%;
+      z-index:2;
+      height:100%;
+      text-align:center;
+      position:absolute;
+      left:0;
+      top:0;
+      background-color:aliceblue;
+    }
+    
+
+    @media only screen and (min-width: 500px) {
+      #header #date_nav{
+        position:absolute;
+        top:0;
+      }
+      #dates{
+        display:grid;
+        grid-template-columns: auto auto auto auto auto auto auto;
+      }
+      #dates .date{
+        padding-top:100%;
+        height:0;
+        padding-bottom:0;
+      }
+
+      #dates .date span.desktop{
+        display:block;
+      }
+      #dates .date span.mobile{
+        display:none;
+      }
+      #days{
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      }
+    }

@@ -78,6 +78,7 @@ app.get('/reserved/:start/:end', function(request, response) {
 
 // End-point to change
 app.put('/reserved/:date', function(request, response) {
+  console.log("Reservation", request.body.reserved)
   const date = moment(request.params.date);
   const reserved = !!request.body.reserved;
   if (!date.isValid()) {
